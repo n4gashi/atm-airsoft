@@ -1,0 +1,114 @@
+
+@import "compass/css3";
+
+@include font-face("BebasNeueBold", font-files("BebasNeueBold-webfont.eot", "BebasNeueBold-webfont.woff2", "BebasNeueBold-webfont.woff", "BebasNeueBold-webfont.ttf", "BebasNeueBold-webfont.svg"));
+@include font-face("FiraSansBook", font-files("FiraSans-Book-webfont.eot", "FiraSans-Book-webfont.woff2", "FiraSans-Book-webfont.woff", "FiraSans-Book-webfont.ttf", "FiraSans-Book-webfont.svg"));
+@include font-face("FiraSansMedium", font-files("FiraSans-Medium-webfont.eot", "FiraSans-Medium-webfont.woff2", "FiraSans-Medium-webfont.woff", "FiraSans-Medium-webfont.ttf", "FiraSans-Medium-webfont.svg"));
+@include font-face("FiraSansUltraLight", font-files("FiraSans-UltraLight-webfont.eot", "FiraSans-UltraLight-webfont.woff2", "FiraSans-UltraLight-webfont.woff", "FiraSans-UltraLight-webfont.ttf", "FiraSans-UltraLight-webfont.svg"));
+
+body
+{
+    background:url('../images/background.png') top center;
+    @include background-size(cover);
+    padding: 0 40px;
+}
+
+h1,h2,h3,h4,h5,h6{ margin:0; padding:0; }
+
+.wrapper{ /*max-width:1600px;*/ margin:0 auto; }
+.overlay{ position:absolute; top:0; left:0; width:100%; height:100%; display:inline-block; background:#212121; @include opacity(0.7); }
+
+/**************************************************************
+** NAVIGATION
+**************************************************************/
+
+#nav{ width:100%; height:120px; }
+#nav a
+{
+    font-family:"BebasNeueBold";
+    @include opacity(0.4);
+    @include transition-property(opacity);
+    @include transition-duration(0.5s);
+}
+#nav a:hover{ @include opacity(1); }
+#nav a.active{ @include opacity(1); }
+
+/**************************************************************
+** LANDING
+**************************************************************/
+
+#landing
+{
+    text-align:center;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+}
+#landing h1{ color:#FFFFFF; font-family:"BebasNeueBold"; font-size:60px; line-height:50px; }
+#landing h2{ color:#FFFFFF; font-family:"FiraSansUltraLight"; font-size:30px; }
+#landing h2 span.boldy{ font-family:"FiraSansBook"; }
+
+#landing a.button
+{
+    font-family:"FiraSansMedium";
+    font-size:18px;
+    text-transform:uppercase;
+    height: 64px;
+
+    margin-top:8px;
+    background:transparent;
+    border:3px solid #FFFFFF;
+    @include opacity(0.4);
+
+    @include transition-property(opacity, background, border);
+    @include transition-duration(0.23s);
+}
+
+#landing a.button:hover{ background:#65503d; @include opacity(1); border:3px solid #79624e; }
+
+/**************************************************************
+** PAGE TITLE
+**************************************************************/
+
+#app-page-title{ height:120px; }
+#app-page-title h2{ line-height:118px; height:120px; color:#2b2b2b; font-size:36px; font-family:"FiraSansUltraLight"; text-transform:uppercase; font-weight:normal; }
+#app-page-title h2 span.boldy{ font-family:"FiraSansMedium"; }
+
+/**************************************************************
+** CONTENT
+**************************************************************/
+
+#content{ background:#e9e9e9; padding:20px; }
+
+/**************************************************************
+** TEAM
+**************************************************************/
+
+.team-member
+{
+    position: relative;
+    height:200px;
+    background:#d8d7d7 center center;
+    @include background-size(cover);
+}
+
+.member-name
+{
+
+    @include transition-property(opacity, padding-top);
+    @include transition-duration(0.23s);
+
+    color:#FFFFFF;
+    font-size:36px;
+    font-family:"FiraSansUltraLight";
+    padding-top:0;
+    @include opacity(0.3);
+
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+}
+
+.team-member:hover .member-name{ @include opacity(1); padding-top:120px;  }

@@ -11,7 +11,5 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', array('as' => 'page.index', 'uses' => 'PageController@index'));
+Route::get('/team', array('as' => 'team.index', 'uses' => 'TeamController@index'));
