@@ -9,7 +9,7 @@
 
     @include('layout.navigation')
 
-    <div id="app-page-title">
+    <div id="app-page-title" class="wrapper">
         @section('title')
         @show
     </div>
